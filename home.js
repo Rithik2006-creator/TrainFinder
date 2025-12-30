@@ -22,9 +22,7 @@ function getTimeDifference(startTime, endTime) {
   return `${hours}H ${minutes}M`;
 }
 let t=null
-// Examples:
-console.log(getTimeDifference("09:30:00", "12:45:00")); // "3H 15M"
-console.log(getTimeDifference("23:00:00", "01:30:00")); // "2H 30M"
+
 
 let list = document.getElementById("main");
 function search(){
@@ -78,6 +76,7 @@ function checkDataType(data) {
     }
 ).then(res=>res.json())
 .then(data=>{
+  t = getTimeDifference(element.departure,element.arrival);
     data.forEach(element => {
 
         list.innerHTML+=
@@ -88,7 +87,7 @@ function checkDataType(data) {
         <div class="train-time">
           <span class="time">${element.departure}</span>
           <span class="station">${element.fromStation}</span>
-          <span class="duration">→ 4h 17m →</span>
+          <span class="duration">→ ${t} →</span>
           <span class="time">${element.arrival} </span>
           <span class="station" => ${element.toStation}</span>
         </div>
@@ -109,4 +108,5 @@ function checkDataType(data) {
 checkDataType(data)
 
 }
+
 
