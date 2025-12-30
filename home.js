@@ -76,9 +76,9 @@ function checkDataType(data) {
     }
 ).then(res=>res.json())
 .then(data=>{
-  t = getTimeDifference(element.departure,element.arrival);
+ 
     data.forEach(element => {
-
+ t = getTimeDifference(element.departure,element.arrival);
         list.innerHTML+=
         `  <div class="train-card">
     <div class="train-header">
@@ -108,5 +108,6 @@ function checkDataType(data) {
 checkDataType(data)
 
 }
+
 
 
