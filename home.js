@@ -37,7 +37,10 @@ function checkDataType(data) {
   if (!isNaN(converted)) {
     fetch(`https://posttraumatic-preterlegal-chante.ngrok-free.dev/train/id/${data}`,
     {
-        method:"GET"
+        method:"GET",
+      headers: {
+    "ngrok-skip-browser-warning": "true"
+  }
     }
 ).then(res=>res.json())
 .then(element=>{
@@ -68,7 +71,10 @@ function checkDataType(data) {
   } else {
     fetch(`https://posttraumatic-preterlegal-chante.ngrok-free.dev/train/${data}`,
     {
-        method:"GET"
+        method:"GET",
+      headers: {
+    "ngrok-skip-browser-warning": "true"
+  }
     }
 ).then(res=>res.json())
 .then(data=>{
@@ -103,3 +109,4 @@ function checkDataType(data) {
 checkDataType(data)
 
 }
+
