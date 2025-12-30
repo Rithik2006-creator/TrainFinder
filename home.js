@@ -35,7 +35,7 @@ function checkDataType(data) {
   const converted = Number(data); // try c
 
   if (!isNaN(converted)) {
-    fetch(`http://localhost:8080/train/id/${data}`,
+    fetch(`https://posttraumatic-preterlegal-chante.ngrok-free.dev/train/id/${data}`,
     {
         method:"GET"
     }
@@ -66,7 +66,7 @@ function checkDataType(data) {
 
   }) .catch(err => console.error(err))
   } else {
-    fetch(`http://localhost:8080/train/${data}`,
+    fetch(`https://posttraumatic-preterlegal-chante.ngrok-free.dev/train/${data}`,
     {
         method:"GET"
     }
@@ -101,4 +101,5 @@ function checkDataType(data) {
 }
 
 checkDataType(data)
+
 }
